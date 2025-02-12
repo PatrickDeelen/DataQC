@@ -525,6 +525,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_IlluminaHT12v3.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
       else if (exp_platform == 'HT12v4')
       """
@@ -538,6 +539,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_IlluminaHT12v4.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
       else if (exp_platform == 'HuRef8')
       """
@@ -551,6 +553,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_IlluminaHuRef8.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
       else if (exp_platform == 'RNAseq')
       """
@@ -564,6 +567,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_RNAseq.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
       else if (exp_platform == 'AffyU219')
       """
@@ -577,6 +581,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_AffyU219.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
       else if (exp_platform == 'AffyHumanExon')
       """
@@ -590,6 +595,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/EmpiricalProbeMatching_AffyHumanExon.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt 
       """
       else if (exp_platform == 'RNAseq_HGNC')
       """
@@ -603,6 +609,7 @@ process GeneExpressionQC {
       --contamination_area ${contamination_area} \
       --emp_probe_mapping $baseDir/data/HgncToEnsemblProbeMatching.txt \
       --output outputfolder_exp
+      md5sum outputfolder_exp/exp_data_QCd/* > outputfolder_exp/exp_data_QCd/md5sums.txt
       """
 }
 

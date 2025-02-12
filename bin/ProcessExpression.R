@@ -1009,6 +1009,14 @@ ggsave(paste0(args$output, "/exp_plots/PCA_after.png"), height = 7.5, width = 9,
 ggsave(paste0(args$output, "/exp_plots/PCA_after.pdf"), height = 7.5, width = 9, units = "in", dpi = 300)
 
 # Convert to HASE format
+# Log2 transform expression data for interaction analyses, and write to file.
+and_pp <- log2(and_pp + 1)
+and_pp2 <- as.data.table(t(and_pp))
+and_pp2 <- data.table(`ID` = colnames(and_pp), and_pp2)
+
+fwrite(and_pp2, paste0(args$output, "/exp_data_QCd/exp_data_preprocessed_noINT_log2.txt"), sep = "\t", quote = FALSE)
+
+# Write inverse normal transformed data to file.
 and_p2 <- as.data.table(t(and_p))
 and_p2 <- data.table(`ID` = colnames(and_p), and_p2)
 
